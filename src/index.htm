@@ -4,14 +4,11 @@
         <title>AngularJS Weather Forecast SPA</title>
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta charset="UTF-8">
-
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- load bootstrap and fontawesome via CDN -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
         <style>
-            html, body, input, select, textarea
-            {
-                font-size: 1.05em !important;
-            }
+
         </style>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <!-- load angular via CDN -->
@@ -20,7 +17,12 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-messages/1.5.6/angular-messages.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular-resource.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular-route.js"></script>
-        <script src="/assets/js/app.js"></script>
+        <script src="/scripts/app.js"></script>
+        <script src="/scripts/routes.js"></script>
+        <script src="/scripts/homeController.js"></script>
+        <script src="/scripts/forecastController.js"></script>
+   
+        <link rel=”manifest” href=”../manifest.json”>
     </head>
     <body>
 
@@ -42,6 +44,18 @@
             <div ng-view></div>
 
         </div>
+<script>
+if('serviceWorker' in navigator) {
+  navigator.serviceWorker
+           .register('/sw.js')
+           .then(function() { console.log("Service Worker Registered"); })
+    .catch(function(error) {
+        // registration failed
+        console.log('Registration failed with ' + error);
+      });
+}
 
+
+</script>
     </body>
 </html>

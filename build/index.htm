@@ -1,0 +1,15 @@
+<!DOCTYPE html><html lang=en-us ng-app=weatherApp><head><title>AngularJS Weather Forecast SPA</title><meta http-equiv=X-UA-Compatible content="IE=Edge"><meta charset=UTF-8><meta name=viewport content="width=device-width, initial-scale=1"><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css><style>
+
+        </style><script src=https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js></script><script type=text/javascript src="http://maps.googleapis.com/maps/api/js?sensor=false"></script><script src=https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular.min.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/angular-messages/1.5.6/angular-messages.min.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular-resource.min.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular-route.js></script><script src=/scripts/app.js></script><script src=/scripts/routes.js></script><script src=/scripts/homeController.js></script><script src=/scripts/forecastController.js></script><link rel=”manifest” href=”../manifest.json”></head><body><header><nav class="navbar navbar-default"><div class=container><div class=navbar-header><a class=navbar-brand href="#/" tabindex=0>AngularJS Weather</a></div><ul class="nav navbar-nav navbar-right"><li><a href="#/"><i class="fa fa-home" tabindex=0></i> Home</a></li></ul></div></nav></header><div class=container><div ng-view></div></div><script>
+if('serviceWorker' in navigator) {
+  navigator.serviceWorker
+           .register('/sw.js')
+           .then(function() { console.log("Service Worker Registered"); })
+    .catch(function(error) {
+        // registration failed
+        console.log('Registration failed with ' + error);
+      });
+}
+
+
+</script></body></html>

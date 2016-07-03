@@ -1,0 +1,14 @@
+{
+ “short_name”: “Angular Weather”,
+ “name”: “Angular Weather”,
+“display”: “fullscreen”,
+ “orientation”: “landscape”,
+ “icons”: [
+ {
+ “src”: “../images/144.android.png”,
+ “sizes”: “144x144”,
+ “type”: “image/png”
+ }
+ ],
+ “start_url”: “index.ejs
+}
