@@ -3,7 +3,7 @@ var app = express();
 
 var port = process.env.PORT || 3000;
 
-// app.set('view engine', 'htm');
+app.set('view engine', 'html');
 
 app.use(express.static(__dirname + '/build'));
 
