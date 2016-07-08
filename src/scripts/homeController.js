@@ -2,7 +2,7 @@ weatherApp.controller('homeController', ['$scope', 'cityService', function($scop
 						// indexedDB.deleteDatabase('weatherInfo');
 	if (!navigator.onLine) {
 
-		$("#offlineAlert").append("No network connection. Please use cached data from the dropdown list.")
+		$("#offlineAlert").append("No network connection. Please use cached data.<br> Cached cities include: <br>")
 		$("#offlineAlert").addClass("alert alert-warning");
 	};
 
@@ -36,7 +36,10 @@ weatherApp.controller('homeController', ['$scope', 'cityService', function($scop
 
             if (cursor) {
             	console.log(cursor.value.city);
-            	$("#cities").append("<option value='" + cursor.value.city +"'>");
+                if (!navigator.onLine) {
+                	$("#cities").append("<option value='" + cursor.value.city +"'>");
+                    $("#offlineAlert").append(cursor.value.city +"<br>");
+                }
                 // if (id === cursor.value.departure_station) {
                 //     // $("#arrivalOption").append("<option value=" + '"' + cursor.value.arrival_id + '">' + cursor.value.arrival_station + "</option>")
                 // }

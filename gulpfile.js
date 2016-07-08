@@ -53,28 +53,6 @@ gulp.src("./src/*.ejs")
   }))
   .pipe(gulp.dest("./build"));
 
-// gulp.task('scripts', function(){
-// 	console.log('Starting scripts task');
-// 	return gulp.src('./src/scripts/*.js')
-// 		.pipe(uglify()).on('error', function(e){
-//             console.log(e);
-//          })
-// 		.pipe(gulp.dest('./build/scripts/'))
-// });
-
-// gulp.task('scripts', function() {
-//   return gulp.src(['./src/scripts/*.js'])
-//     .pipe(concat('all.js'))
-//     .pipe(gulp.dest('./build/scripts/'));
-// });
-
-// gulp.task('scripts', function(){
-//     return gulp.src('./src/scripts/*.js')
-//         .pipe(concat('all.js'))
-//         .pipe(uglify())
-//         .pipe(gulp.dest('./build/scripts/'));
-// });
-
 
 gulp.task('scripts', function() {  
     return gulp.src('./src/scripts/*.js')

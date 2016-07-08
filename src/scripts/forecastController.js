@@ -56,7 +56,7 @@ weatherApp.controller('forecastController', ['$scope', '$resource', 'cityService
                         console.log(cursor.value.today_temperature);
                         console.log(cursor.value.tomorrow_temperature);
                         $("#offlineTempToday").append("Today temperature is " + cursor.value.today_temperature + "</br>");
-                        $("#offlineTempTomorrow").append("Tomorrow temperature is" + cursor.value.tomorrow_temperature + "</br>");
+                        $("#offlineTempTomorrow").append("Tomorrow temperature is " + cursor.value.tomorrow_temperature + "</br>");
                     }
 
                     // $("#cities").append("<option value='" + cursor.value.city +"'>");

@@ -202,7 +202,7 @@ weatherApp.controller('forecastController', ['$scope', '$resource', 'cityService
                         console.log(cursor.value.today_temperature);
                         console.log(cursor.value.tomorrow_temperature);
                         $("#offlineTempToday").append("Today temperature is " + cursor.value.today_temperature + "</br>");
-                        $("#offlineTempTomorrow").append("Tomorrow temperature is" + cursor.value.tomorrow_temperature + "</br>");
+                        $("#offlineTempTomorrow").append("Tomorrow temperature is " + cursor.value.tomorrow_temperature + "</br>");
                     }
 
                     // $("#cities").append("<option value='" + cursor.value.city +"'>");
@@ -339,7 +339,7 @@ weatherApp.controller('homeController', ['$scope', 'cityService', function($scop
 						// indexedDB.deleteDatabase('weatherInfo');
 	if (!navigator.onLine) {
 
-		$("#offlineAlert").append("No network connection. Please use cached data from the dropdown list.")
+		$("#offlineAlert").append("No network connection. Please use cached data.<br> Cached cities include: <br>")
 		$("#offlineAlert").addClass("alert alert-warning");
 	};
 
@@ -373,7 +373,10 @@ weatherApp.controller('homeController', ['$scope', 'cityService', function($scop
 
             if (cursor) {
             	console.log(cursor.value.city);
-            	$("#cities").append("<option value='" + cursor.value.city +"'>");
+                if (!navigator.onLine) {
+                	$("#cities").append("<option value='" + cursor.value.city +"'>");
+                    $("#offlineAlert").append(cursor.value.city +"<br>");
+                }
                 // if (id === cursor.value.departure_station) {
                 //     // $("#arrivalOption").append("<option value=" + '"' + cursor.value.arrival_id + '">' + cursor.value.arrival_station + "</option>")
                 // }
@@ -497,15 +500,6 @@ weatherApp.controller('homeController', ['$scope', 'cityService', function($scop
 
     document.getElementById('city').innerHTML = $scope.city;
 }])
-// if('serviceWorker' in navigator) {
-//   navigator.serviceWorker
-//            .register('/assets/sw.js')
-//            .then(function() { console.log("Service Worker Registered"); })
-// 	.catch(function(error) {
-// 	    // registration failed
-// 	    console.log('Registration failed with ' + error);
-// 	  });
-// }
 weatherApp.config(['$routeProvider',function($routeProvider){
 	$routeProvider
 	.when('/', {
