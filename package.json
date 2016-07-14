@@ -26,6 +26,7 @@
   "dependencies": {
     "ejs": "^2.4.2",
     "express": "^4.13.4",
-    "gulp-ejs": "^2.1.2"
+    "gulp-ejs": "^2.1.2",
+    "nodemon": "^1.9.2"
   }
 }

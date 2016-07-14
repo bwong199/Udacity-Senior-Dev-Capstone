@@ -17,7 +17,7 @@ npm install
 # Running
 
 ```sh
-npm run serve
+nodemon server.js
 ```
 
 You should now have the app server at [localhost:3000](http://localhost:3000) 
