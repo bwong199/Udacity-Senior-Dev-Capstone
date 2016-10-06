@@ -1,3 +1,10 @@
+window.onload=function(){
+    $(function(){
+        if(window.location.protocol==="https:")
+            window.location.protocol="http";
+    });
+}
+
 weatherApp.controller('forecastController', ['$scope', '$resource', 'cityService', '$routeParams', function($scope, $resource, cityService, $routeParams) {
     $scope.city = cityService.city;
 

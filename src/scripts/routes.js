@@ -15,9 +15,3 @@ weatherApp.config(['$routeProvider',function($routeProvider){
 }])
 
 
-var forceSSL = function () {
-    if ($location.protocol() !== 'http') {
-        $window.location.href = $location.absUrl().replace('https', 'http');
-    }
-};
-forceSSL();

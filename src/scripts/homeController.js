@@ -1,3 +1,10 @@
+window.onload=function(){
+    $(function(){
+        if(window.location.protocol==="https:")
+            window.location.protocol="http";
+    });
+}
+
 weatherApp.controller('homeController', ['$scope', 'cityService', function($scope, cityService) {
 						// indexedDB.deleteDatabase('weatherInfo');
 	if (!navigator.onLine) {
