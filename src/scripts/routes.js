@@ -13,3 +13,11 @@ weatherApp.config(['$routeProvider',function($routeProvider){
 		controller: 'forecastController'
 	})
 }])
+
+
+var forceSSL = function () {
+    if ($location.protocol() !== 'http') {
+        $window.location.href = $location.absUrl().replace('https', 'http');
+    }
+};
+forceSSL();
