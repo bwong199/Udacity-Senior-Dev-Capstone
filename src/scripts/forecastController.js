@@ -3,7 +3,7 @@ weatherApp.controller('forecastController', ['$scope', '$resource', 'cityService
 
     $scope.days = $routeParams.days || 2;
 
-    $scope.weatherAPI = $resource("http://api.openweathermap.org/data/2.5/forecast/daily", {
+    $scope.weatherAPI = $resource("https://api.openweathermap.org/data/2.5/forecast/daily", {
         callback: "JSON_CALLBACK"
     }, {
         get: {
@@ -70,7 +70,7 @@ weatherApp.controller('forecastController', ['$scope', '$resource', 'cityService
     }    
     }
 
-    var url = "http://api.openweathermap.org/data/2.5/forecast/daily?" + "q=" + $scope.city + "&cnt=" + $scope.days + "&APPID=" +  "3ca4cb682481154e17368d817de04cb4" + "&units=" + "metric";
+    var url = "https://api.openweathermap.org/data/2.5/forecast/daily?" + "q=" + $scope.city + "&cnt=" + $scope.days + "&APPID=" +  "3ca4cb682481154e17368d817de04cb4" + "&units=" + "metric";
 
         $.ajax({
             url: url,
