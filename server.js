@@ -11,4 +11,9 @@ app.get('/', function(req, res){
 	res.render('index');
 });
 
+app.all('*', function(req, res) {
+  console.log("HTTP: " + req.url);
+  return res.redirect("http://" + req.headers["host"] + req.url);
+});
+
 app.listen(port);
